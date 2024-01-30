@@ -3,12 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".refine">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="20dp">
+        android:padding="10dp">
 
         <TextView
             android:id="@+id/availability_label"
@@ -17,6 +18,7 @@
             android:text="Select your Availability"
             android:textColor="@color/black"
             android:textSize="17sp"
+            android:layout_margin="10dp"
             />
 
         <Spinner
@@ -26,29 +28,193 @@
             android:layout_below="@id/availability_label"
             android:spinnerMode="dropdown"
             android:background="@drawable/spinner"
+            android:layout_marginHorizontal="10dp"
             />
 
         <TextView
             android:id="@+id/status_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Select your Availability"
+            android:text="Add Your Status"
             android:textColor="@color/black"
             android:textSize="17sp"
             android:layout_below="@id/spinner"
+            android:layout_margin="10dp"
             />
 
         <EditText
             android:id="@+id/status_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
+            android:paddingHorizontal="10dp"
             android:gravity="start|top"
             android:inputType="textMultiLine"
             android:layout_below="@id/status_label"
             android:paddingBottom="30dp"
-            android:background="@drawable/text_area"/>
+            android:textSize="15sp"
+            android:text='Hi community! I am open to new connections "😊"'
+            android:background="@drawable/text_area"
+            android:layout_marginHorizontal="10dp"/>
 
+        <TextView
+            android:id="@+id/distance_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Hyper local Distance"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            android:layout_below="@id/status_text"
+            android:layout_margin="10dp"
+
+            />
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/distance_slider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:valueFrom="1"
+            android:valueTo="100"
+            android:stepSize="1"
+            app:tickVisible="false"
+            app:trackColorActive="@color/dark_blue"
+            app:thumbColor="#170069"
+            app:trackColorInactive="@color/gray"
+            style="@style/Myslider"
+            android:layout_below="@id/distance_label"
+            android:layout_marginBottom="-15dp"
+            android:layout_marginTop="15dp"/>
+
+        <LinearLayout
+            android:id="@+id/distance_range"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/distance_slider"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="1 Km"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="100 Km"
+                android:gravity="right"
+                />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/purpose_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Purpose"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            android:layout_below="@id/distance_range"
+            android:layout_margin="10dp"
+            />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/purpose_label"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/purpose1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Coffee"
+                    android:textAllCaps="false"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/rounded_button"/>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/purpose2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Business"
+                    android:textAllCaps="false"
+                    android:layout_marginHorizontal="5dp"
+                    android:background="@drawable/rounded_button"/>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/purpose3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hobbies"
+                    android:textAllCaps="false"
+                    android:layout_marginHorizontal="5dp"
+                    android:background="@drawable/rounded_button"/>
+                </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/purpose4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Friendship"
+                    android:textAllCaps="false"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/rounded_button"
+                    android:paddingHorizontal="20dp"/>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/purpose5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Movies"
+                    android:textAllCaps="false"
+                    android:layout_marginHorizontal="5dp"
+                    android:background="@drawable/rounded_button"/>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/purpose6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dinnig"
+                    android:textAllCaps="false"
+                    android:layout_marginHorizontal="5dp"
+
+                    android:background="@drawable/rounded_button"/>
+                </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/purpose7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dating"
+                    android:textAllCaps="false"
+                    android:layout_marginHorizontal="5dp"
+                    android:background="@drawable/rounded_button"/>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/purpose8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Matrimony"
+                    android:textAllCaps="false"
+                    android:layout_marginHorizontal="5dp"
+                    android:paddingHorizontal="20dp"
+                    android:background="@drawable/rounded_button"/>
+
+                </TableRow>
+
+
+        </TableLayout>
 
     </RelativeLayout>
 

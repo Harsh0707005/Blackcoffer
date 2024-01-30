@@ -1,14 +1,20 @@
 package com.example.blackcofferdemo;
 
+import android.graphics.Color;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Toast;
+
+import androidx.core.content.ContextCompat;
+import androidx.fragment.app.Fragment;
+
+import java.util.HashMap;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -65,6 +71,35 @@ public class refine extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_refine, container, false);
 
         Spinner spinner = rootView.findViewById(R.id.spinner);
+
+        int[] purposeButtonIds = {
+                R.id.purpose1, R.id.purpose2, R.id.purpose3, R.id.purpose4,
+                R.id.purpose5, R.id.purpose6, R.id.purpose7, R.id.purpose8
+        };
+        HashMap<String, Integer> purposeSelected = new HashMap<String, Integer>();
+
+        for (int buttonId : purposeButtonIds) {
+            Button purposeButton = rootView.findViewById(buttonId);
+            purposeSelected.put(String.valueOf(buttonId), 0);
+            purposeButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (purposeSelected.get(String.valueOf(purposeButton.getId())).equals(0)) {
+                        // Change the background to R.drawable.rounded_selected_button
+                        purposeButton.setBackgroundResource(R.drawable.rounded_selected_button);
+                        purposeSelected.replace(String.valueOf(purposeButton.getId()), 1);
+                        purposeButton.setTextColor(Color.WHITE);
+                    }else{
+                        purposeButton.setBackgroundResource(R.drawable.rounded_button);
+                        purposeSelected.replace(String.valueOf(purposeButton.getId()), 0);
+                        purposeButton.setTextColor(Color.BLACK);
+
+                    }
+                }
+            });
+        }
+
+
 
         String[] items = { "Available | Hey Let Us Connect", "Away | Stay Discrete And Watch",
                 "Busy | Do Not Disturb | Will Catch Up Later", "SOS | Emergency! Need Assistance! HELP"};
