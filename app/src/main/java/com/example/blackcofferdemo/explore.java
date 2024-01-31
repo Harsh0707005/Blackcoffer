@@ -79,6 +79,7 @@ public class explore extends Fragment {
         item1.add("Kush Jariwala");
         item1.add("Surat | Master Student");
         item1.add("Within 400-500 m");
+        item1.add("30");
         item1.add("Coffee | Business | Friendship");
         item1.add("Hi community! I am open to new connections \"😊\"");
         dataList.add(item1);
@@ -88,6 +89,7 @@ public class explore extends Fragment {
         item2.add("John Doe");
         item2.add("New York | Engineer");
         item2.add("Within 1-2 km");
+        item2.add("60");
         item2.add("Programming | Travel | Reading");
         item2.add("Hello, I'm John!");
         dataList.add(item2);
@@ -97,6 +99,7 @@ public class explore extends Fragment {
         item3.add("Jane Smith");
         item3.add("Los Angeles | Artist");
         item3.add("Within 3-4 km");
+        item3.add("80");
         item3.add("Art | Music | Nature");
         item3.add("Nice to meet you!");
         dataList.add(item3);

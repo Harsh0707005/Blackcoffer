@@ -1,8 +1,10 @@
 package com.example.blackcofferdemo;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -28,15 +30,18 @@ public class recyclerViewAdapter extends RecyclerView.Adapter<recyclerViewAdapte
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         List<String> data = dataList.get(position);
-        // Set data to the views in the CardView
         holder.name.setText(data.get(0));
         holder.location.setText(data.get(1));
         holder.distance.setText(data.get(2));
-        holder.interests.setText(data.get(3));
-        holder.bio.setText(data.get(4));
-        // Set other data as needed
+        holder.progressBar.setProgress(30);
+        try {
+            holder.progressBar.setProgress(Integer.parseInt(data.get(3)));
+        }catch (Exception e){
+            Log.d("harsh", e.getMessage());
+        }
+        holder.interests.setText(data.get(4));
+        holder.bio.setText(data.get(5));
 
-        // Add any other data binding logic here
     }
 
     @Override
@@ -45,19 +50,17 @@ public class recyclerViewAdapter extends RecyclerView.Adapter<recyclerViewAdapte
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        // Define your CardView views here
         TextView name, location, distance, interests, bio;
-        // Add other views as needed
+        ProgressBar progressBar;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            // Initialize your views here
             name = itemView.findViewById(R.id.name);
             location = itemView.findViewById(R.id.location);
             distance = itemView.findViewById(R.id.distance);
+            progressBar = itemView.findViewById(R.id.progressBar);
             interests = itemView.findViewById(R.id.interests);
             bio = itemView.findViewById(R.id.bio);
-            // Initialize other views as needed
         }
     }
 }
