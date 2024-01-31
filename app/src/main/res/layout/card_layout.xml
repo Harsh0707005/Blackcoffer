@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
+
+    <TextView
+        android:id="@+id/initials"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="KJ"
+        android:textColor="@color/dark_blue"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:paddingHorizontal="18dp"
+        android:paddingVertical="20dp"
+        android:elevation="5dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="15dp"
+        android:background="@drawable/initials_textview"/>
+
+    <androidx.cardview.widget.CardView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:layout_gravity="center"
+        app:cardCornerRadius="30dp"
+        android:layout_marginVertical="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="30dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingHorizontal="10dp"
+            android:paddingBottom="20dp">
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/dark_blue"
+                android:layout_alignParentTop="true"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:text="Kush Jariwala"
+                android:layout_marginTop="40dp"
+                android:layout_marginLeft="50dp"/>
+
+            <TextView
+                android:id="@+id/location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/name"
+                android:textSize="14sp"
+                android:text="Surat | Master Student"
+                android:layout_marginLeft="50dp"/>
+
+            <TextView
+                android:id="@+id/distance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/location"
+                android:textSize="14sp"
+                android:textColor="@color/dark_blue"
+                android:textStyle="bold"
+                android:text="Within 400-500 m"
+                android:layout_marginLeft="50dp"/>
+
+            <TextView
+                android:id="@+id/interests"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/distance"
+                android:textSize="14sp"
+                android:textColor="@color/dark_blue"
+                android:textStyle="bold"
+                android:text="Coffee | Business | Friendship"
+                android:layout_marginHorizontal="10dp"/>
+
+            <TextView
+                android:id="@+id/bio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/interests"
+                android:layout_marginTop="8dp"
+                android:textSize="14sp"
+                android:text='Hi community! I am open to new connections "😊"'
+                android:layout_marginHorizontal="10dp"/>
+
+            <TextView
+                android:id="@+id/invite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/dark_blue"
+                android:layout_alignParentRight="true"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:text='+ INVITE'
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="20dp"/>
+
+
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>
