@@ -31,6 +31,17 @@ public class recyclerViewAdapter extends RecyclerView.Adapter<recyclerViewAdapte
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         List<String> data = dataList.get(position);
         holder.name.setText(data.get(0));
+        String[] words = data.get(0).split(" ");
+
+        // Extract the first character of each word
+        StringBuilder result = new StringBuilder();
+        for (String word : words) {
+            if (!word.isEmpty()) {
+                result.append(word.charAt(0));
+            }
+        }
+        holder.initials.setText(result);
+
         holder.location.setText(data.get(1));
         holder.distance.setText(data.get(2));
         holder.progressBar.setProgress(30);
@@ -50,12 +61,13 @@ public class recyclerViewAdapter extends RecyclerView.Adapter<recyclerViewAdapte
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView name, location, distance, interests, bio;
+        TextView name, location, distance, interests, bio, initials;
         ProgressBar progressBar;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.name);
+            initials = itemView.findViewById(R.id.initials);
             location = itemView.findViewById(R.id.location);
             distance = itemView.findViewById(R.id.distance);
             progressBar = itemView.findViewById(R.id.progressBar);
