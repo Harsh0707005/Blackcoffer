@@ -41,6 +41,18 @@
             android:paddingBottom="20dp">
 
             <TextView
+                android:id="@+id/invite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/dark_blue"
+                android:layout_alignParentRight="true"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:text='+ INVITE'
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="20dp"/>
+
+            <TextView
                 android:id="@+id/name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -72,11 +84,21 @@
                 android:text="Within 400-500 m"
                 android:layout_marginLeft="50dp"/>
 
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="wrap_content"
+                android:layout_below="@id/distance"
+                android:layout_height="wrap_content"
+                android:scaleY="3"
+                android:progress="40"
+                />
+
             <TextView
                 android:id="@+id/interests"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/distance"
+                android:layout_below="@id/progressBar"
                 android:textSize="14sp"
                 android:textColor="@color/dark_blue"
                 android:textStyle="bold"
@@ -93,17 +115,6 @@
                 android:text='Hi community! I am open to new connections "😊"'
                 android:layout_marginHorizontal="10dp"/>
 
-            <TextView
-                android:id="@+id/invite"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/dark_blue"
-                android:layout_alignParentRight="true"
-                android:textStyle="bold"
-                android:textSize="14sp"
-                android:text='+ INVITE'
-                android:layout_marginTop="15dp"
-                android:layout_marginHorizontal="20dp"/>
 
 
 
