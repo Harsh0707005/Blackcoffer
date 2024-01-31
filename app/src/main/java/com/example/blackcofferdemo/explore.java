@@ -2,11 +2,21 @@ package com.example.blackcofferdemo;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -59,6 +69,41 @@ public class explore extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_explore, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_explore, container, false);
+        RecyclerView recyclerView = rootView.findViewById(R.id.recyclerView);
+        List<List<String>> dataList = new ArrayList<>();
+        recyclerViewAdapter adapter = new recyclerViewAdapter(dataList);
+
+        List<String> item1 = new ArrayList<>();
+
+        item1.add("Kush Jariwala");
+        item1.add("Surat | Master Student");
+        item1.add("Within 400-500 m");
+        item1.add("Coffee | Business | Friendship");
+        item1.add("Hi community! I am open to new connections \"😊\"");
+        dataList.add(item1);
+
+// Adding data for the second item
+        List<String> item2 = new ArrayList<>();
+        item2.add("John Doe");
+        item2.add("New York | Engineer");
+        item2.add("Within 1-2 km");
+        item2.add("Programming | Travel | Reading");
+        item2.add("Hello, I'm John!");
+        dataList.add(item2);
+
+// Adding data for the third item
+        List<String> item3 = new ArrayList<>();
+        item3.add("Jane Smith");
+        item3.add("Los Angeles | Artist");
+        item3.add("Within 3-4 km");
+        item3.add("Art | Music | Nature");
+        item3.add("Nice to meet you!");
+        dataList.add(item3);
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerView.setAdapter(adapter);
+
+        return rootView;
     }
 }
