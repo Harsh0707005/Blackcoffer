@@ -68,7 +68,6 @@ public class explore extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_explore, container, false);
         RecyclerView recyclerView = rootView.findViewById(R.id.recyclerView);
         List<List<String>> dataList = new ArrayList<>();
@@ -84,7 +83,6 @@ public class explore extends Fragment {
         item1.add("Hi community! I am open to new connections \"😊\"");
         dataList.add(item1);
 
-// Adding data for the second item
         List<String> item2 = new ArrayList<>();
         item2.add("John Doe");
         item2.add("New York | Engineer");
@@ -94,7 +92,6 @@ public class explore extends Fragment {
         item2.add("Hello, I'm John!");
         dataList.add(item2);
 
-// Adding data for the third item
         List<String> item3 = new ArrayList<>();
         item3.add("Jane Smith");
         item3.add("Los Angeles | Artist");
@@ -103,6 +100,15 @@ public class explore extends Fragment {
         item3.add("Art | Music | Nature");
         item3.add("Nice to meet you!");
         dataList.add(item3);
+
+        List<String> item4 = new ArrayList<>();
+        item4.add("Alice Johnson");
+        item4.add("San Francisco | Designer");
+        item4.add("Within 2-3 km");
+        item4.add("70");
+        item4.add("Design | Photography | Travel");
+        item4.add("Nice to meet you too!");
+        dataList.add(item4);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(adapter);
